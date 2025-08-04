@@ -3,53 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace OpenMPTSharp.Native;
 
-internal enum OpenMPTError
-{
-    Ok = 0,
-    Base = 256,
-    ArgumentNullPointer = Base + 103,
-    Domain = Base + 41,
-    Exception = Base + 11,
-    General = Base + 101,
-    InvalidArgument = Base + 44,
-    InvalidModulePointer = Base + 102,
-    Length = Base + 42,
-    Logic = Base + 40,
-    OutOfMemory = Base + 21,
-    OutOfRange = Base + 43,
-    Overflow = Base + 32,
-    Range = Base + 31,
-    Runtime = Base + 30,
-    Underflow = Base + 33,
-    Unknown = Base + 1
-}
-
-[Flags]
-internal enum OpenMPTErrorFuncResult
-{
-    None = 0,
-    Log = 1 << 0,
-    Store = 1 << 1,
-    Default = Log | Store
-}
-
-[Flags]
-internal enum OpenMPTFileHeaderFlags : ulong
-{
-    None = 0,
-    Containers = 2,
-    Modules = 1,
-    Default = Modules | Containers,
-}
-
-internal enum OpenMPTFileHeaderResult
-{
-    Success = 1,
-    Failure = 0,
-    Error = -255,
-    WantMoreData = -1
-}
-
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 [SuppressMessage("ReSharper", "BuiltInTypeReferenceStyle")]
 internal class OpenMPTFunctions
